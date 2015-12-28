@@ -14,7 +14,7 @@ RUN glide install
 RUN go install github.com/ssoudan/frontend/cmd/frontend
 
 # Run the outyet command by default when the container starts.
-ENTRYPOINT /go/bin/frontend -logtostderr -backend http://$BACKEND_SERVER_HOST:$BACKEND_SERVICE_PORT
+ENTRYPOINT /go/bin/frontend -logtostderr -backend http://$BACKEND_SERVICE_HOST:$BACKEND_SERVICE_PORT
 
 # Document that the service listens on port 8080.
 EXPOSE 8080
